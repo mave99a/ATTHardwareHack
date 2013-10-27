@@ -7,12 +7,15 @@
 //
 
 #import "SPAppDelegate.h"
+#import "SPM2XService.h"
 
 @implementation SPAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    [[SPM2XService sharedInstance] addDataRow];
     return YES;
 }
 							

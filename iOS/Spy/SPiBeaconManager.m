@@ -1,13 +1,13 @@
 //
-//  SPViewController.h
+//  SPiBeaconManager.m
 //  Spy
 //
 //  Created by Robert Mao on 10/26/13.
 //  Copyright (c) 2013 Spy Hackathon Team. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SPiBeaconManager.h"
 
-@interface SPViewController : UIViewController
+@implementation SPiBeaconManager
 
 @end
