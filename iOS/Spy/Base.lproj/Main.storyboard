@@ -65,19 +65,57 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog-record.jpg" id="Exl-l0-LL5">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rlK-Qj-gvD">
+                                <rect key="frame" x="25" y="217" width="270" height="288"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="XzE-SR-CRd" kind="push" id="mo2-Jq-PXO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="My dog" id="xbb-fk-GU0"/>
-                    <connections>
-                        <segue destination="K4P-JI-XDe" kind="push" id="GQw-UL-9HE"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dtm-EC-nfJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="694" y="498"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Gxo-xw-Qqq">
+            <objects>
+                <viewController id="XzE-SR-CRd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gc1-1a-ObD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog-activity.jpg" id="pFN-Pt-Kng">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Mn5-Vl-o2Y">
+                                <rect key="frame" x="14" y="220" width="133" height="141"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="K4P-JI-XDe" kind="push" id="jXc-Ed-xi5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="KJk-2X-ilP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gUI-VY-Vjv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1138" y="579"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="uyN-E2-dFL">
@@ -98,7 +136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FLF-P9-ewB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1270" y="493"/>
+            <point key="canvasLocation" x="1534" y="573"/>
         </scene>
         <!--View Controller - Dogs I am sitting-->
         <scene sceneID="gCI-u3-ATp">
@@ -130,6 +168,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="dog-activity.jpg" width="640" height="1136"/>
+        <image name="dog-record.jpg" width="640" height="1136"/>
         <image name="dog-record.jpg" width="640" height="1136"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

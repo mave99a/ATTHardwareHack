@@ -23,6 +23,8 @@
 		CE9664CE181CA6920010AACE /* SPiBeaconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9664CD181CA6920010AACE /* SPiBeaconManager.m */; };
 		CE9664D0181D846B0010AACE /* dog-record.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE9664CF181D846B0010AACE /* dog-record.jpg */; };
 		CE9664D3181D8ADE0010AACE /* SPDogDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9664D2181D8ADE0010AACE /* SPDogDetailViewController.m */; };
+		CE9664D5181D8CAE0010AACE /* dog-activity.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE9664D4181D8CAE0010AACE /* dog-activity.jpg */; };
+		CE9664D7181D8D5C0010AACE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9664D6181D8D5C0010AACE /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		CE9664CF181D846B0010AACE /* dog-record.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "dog-record.jpg"; sourceTree = "<group>"; };
 		CE9664D1181D8ADE0010AACE /* SPDogDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPDogDetailViewController.h; sourceTree = "<group>"; };
 		CE9664D2181D8ADE0010AACE /* SPDogDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPDogDetailViewController.m; sourceTree = "<group>"; };
+		CE9664D4181D8CAE0010AACE /* dog-activity.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "dog-activity.jpg"; sourceTree = "<group>"; };
+		CE9664D6181D8D5C0010AACE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D3E38B47AADE422EA8FFCBCE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -66,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE9664D7181D8D5C0010AACE /* MapKit.framework in Frameworks */,
 				CE966494181C789D0010AACE /* CoreGraphics.framework in Frameworks */,
 				CE966496181C789D0010AACE /* UIKit.framework in Frameworks */,
 				CE966492181C789D0010AACE /* Foundation.framework in Frameworks */,
@@ -108,6 +113,7 @@
 		CE966490181C789D0010AACE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE9664D6181D8D5C0010AACE /* MapKit.framework */,
 				CE966491181C789D0010AACE /* Foundation.framework */,
 				CE966493181C789D0010AACE /* CoreGraphics.framework */,
 				CE966495181C789D0010AACE /* UIKit.framework */,
@@ -138,6 +144,7 @@
 		CE966498181C789D0010AACE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CE9664D4181D8CAE0010AACE /* dog-activity.jpg */,
 				CE9664CF181D846B0010AACE /* dog-record.jpg */,
 				CE966499181C789D0010AACE /* Spy-Info.plist */,
 				CE96649A181C789D0010AACE /* InfoPlist.strings */,
@@ -228,6 +235,7 @@
 			files = (
 				CE9664AD181C789D0010AACE /* Images.xcassets in Resources */,
 				CE9664A5181C789D0010AACE /* Main.storyboard in Resources */,
+				CE9664D5181D8CAE0010AACE /* dog-activity.jpg in Resources */,
 				CE96649C181C789D0010AACE /* InfoPlist.strings in Resources */,
 				CE9664D0181D846B0010AACE /* dog-record.jpg in Resources */,
 			);
