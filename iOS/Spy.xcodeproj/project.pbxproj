@@ -25,6 +25,7 @@
 		CE9664D3181D8ADE0010AACE /* SPDogDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9664D2181D8ADE0010AACE /* SPDogDetailViewController.m */; };
 		CE9664D5181D8CAE0010AACE /* dog-activity.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE9664D4181D8CAE0010AACE /* dog-activity.jpg */; };
 		CE9664D7181D8D5C0010AACE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9664D6181D8D5C0010AACE /* MapKit.framework */; };
+		CE9664DA181D97E40010AACE /* SPMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9664D9181D97E40010AACE /* SPMapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		CE9664D2181D8ADE0010AACE /* SPDogDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPDogDetailViewController.m; sourceTree = "<group>"; };
 		CE9664D4181D8CAE0010AACE /* dog-activity.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "dog-activity.jpg"; sourceTree = "<group>"; };
 		CE9664D6181D8D5C0010AACE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CE9664D8181D97E40010AACE /* SPMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPMapViewController.h; sourceTree = "<group>"; };
+		CE9664D9181D97E40010AACE /* SPMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPMapViewController.m; sourceTree = "<group>"; };
 		D3E38B47AADE422EA8FFCBCE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -137,6 +140,8 @@
 				CE9664CD181CA6920010AACE /* SPiBeaconManager.m */,
 				CE9664D1181D8ADE0010AACE /* SPDogDetailViewController.h */,
 				CE9664D2181D8ADE0010AACE /* SPDogDetailViewController.m */,
+				CE9664D8181D97E40010AACE /* SPMapViewController.h */,
+				CE9664D9181D97E40010AACE /* SPMapViewController.m */,
 			);
 			path = Spy;
 			sourceTree = "<group>";
@@ -292,6 +297,7 @@
 				CE96649E181C789D0010AACE /* main.m in Sources */,
 				CE9664CB181CA0C60010AACE /* SPM2XService.m in Sources */,
 				CE9664D3181D8ADE0010AACE /* SPDogDetailViewController.m in Sources */,
+				CE9664DA181D97E40010AACE /* SPMapViewController.m in Sources */,
 				CE9664A2181C789D0010AACE /* SPAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -64,6 +64,8 @@ static int count = 0;
             if (deserializedData != nil) {
                 CLLocationCoordinate2D pt = CLLocationCoordinate2DMake([deserializedData[@"lat"] floatValue], [deserializedData[@"lng"] floatValue]);
                 //[_track addObject:pt];
+                if (count> 1000) break;
+                
                 tracks[count++] = pt;
             }
             else {

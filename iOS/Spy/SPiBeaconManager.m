@@ -39,6 +39,21 @@ static CLProximity lastproximity = CLProximityUnknown;
     return _sharedInstance;
 }
 
+- (void) publishLocation
+{
+    if (_lastLocation == nil)
+        return;
+    
+    NSDictionary* location = @{
+                               @"lat":[NSNumber numberWithFloat:_lastLocation.coordinate.latitude],
+                               @"lng":[NSNumber numberWithFloat:_lastLocation.coordinate.longitude]
+                               };
+    
+    NSString* loc = [location JSONString];
+    [[SPM2XService sharedInstance] addDataRow:loc];
+    _lastPubLocation = _lastLocation;
+}
+
 - (void) publishBeacon
 {
     CLBeacon *beacon = self.detectedBeacons.lastObject;
@@ -63,19 +78,17 @@ static CLProximity lastproximity = CLProximityUnknown;
                 break;
         }
         
-        if (lastproximity != beacon.proximity) {
-            lastproximity = beacon.proximity;
+        /*
             NSString* row = [NSString stringWithFormat:@"I am %@ an iBeacon(%@, %@ • %@ • %f • %li) - location:%@", proximityString, beacon.proximityUUID.UUIDString, beacon.major.stringValue, beacon.minor.stringValue, beacon.accuracy, (long)beacon.rssi, _lastLocation];
             
-            NSLog(@"[LOG] %@",row);
+            NSLog(@"[LOG] %@",row); */
+        
+        if (_lastPubLocation == nil) {
+            [self publishLocation];
+        }
+        else if ([_lastLocation distanceFromLocation:_lastPubLocation] > 10) {
             
-            NSDictionary* location = @{
-                                       @"lat":[NSNumber numberWithFloat:_lastLocation.coordinate.latitude],
-                                       @"lng":[NSNumber numberWithFloat:_lastLocation.coordinate.longitude]
-                                       };
-            
-            NSString* loc = [location JSONString];
-            [[SPM2XService sharedInstance] addDataRow:loc];
+            [self publishLocation];
         }
     }
 }

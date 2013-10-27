@@ -117,10 +117,10 @@
             </objects>
             <point key="canvasLocation" x="1138" y="579"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="uyN-E2-dFL">
             <objects>
-                <viewController id="K4P-JI-XDe" sceneMemberID="viewController">
+                <viewController id="K4P-JI-XDe" customClass="SPMapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aUa-Ts-CNR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -133,6 +133,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="ORQ-DI-X7r"/>
+                    <connections>
+                        <outlet property="map" destination="yJ5-sq-TFE" id="bkw-IM-6vY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FLF-P9-ewB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
