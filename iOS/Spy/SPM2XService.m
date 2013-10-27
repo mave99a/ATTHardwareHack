@@ -10,7 +10,7 @@
 #import "AFNetworking.h"
 #import "JSONKit.h"
 
-static NSString* m2xendpoint = @"http://api-m2x.att.com/v1/feeds/10c46f0efccda92bbcd17baf812a6e65/streams/location-timestamp/values";
+static NSString* m2xendpoint = @"http://api-m2x.att.com/v1/feeds/10c46f0efccda92bbcd17baf812a6e65/streams/location/values";
 static NSString* m2xkey = @"fab153cc39ddd93134902a209c3e4221";
 static NSString* m2xheader = @"X-M2X-KEY";
 
@@ -59,17 +59,19 @@ static int count = 0;
         count = 0;
         for (NSDictionary* value in response[@"values"]) {
             NSString* str = value[@"value"];
-            NSDictionary *deserializedData = [str objectFromJSONString];
-            
-            if (deserializedData != nil) {
-                CLLocationCoordinate2D pt = CLLocationCoordinate2DMake([deserializedData[@"lat"] floatValue], [deserializedData[@"lng"] floatValue]);
-                //[_track addObject:pt];
-                if (count> 1000) break;
+            if (str!= nil) {
+                NSDictionary *deserializedData = [str objectFromJSONString];
                 
-                tracks[count++] = pt;
-            }
-            else {
-                NSLog(@"[warning] ignore invalid row: %@", str);
+                if (deserializedData != nil) {
+                    CLLocationCoordinate2D pt = CLLocationCoordinate2DMake([deserializedData[@"lat"] floatValue], [deserializedData[@"lng"] floatValue]);
+                    //[_track addObject:pt];
+                    if (count> 1000) break;
+                    
+                    tracks[count++] = pt;
+                }
+                else {
+                    NSLog(@"[warning] ignore invalid row: %@", str);
+                }
             }
         }
         
