@@ -7,11 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface SPM2XService : NSObject
 
 + (SPM2XService*) sharedInstance;
 - (void) addDataRow:(NSString*)row;
 - (void) pullDataRows;
+
+- (int) ptCounts;
+- (CLLocationCoordinate2D*) pttracks;
 
 @end

@@ -8,10 +8,14 @@
 
 #import "SPM2XService.h"
 #import "AFNetworking.h"
+#import "JSONKit.h"
 
 static NSString* m2xendpoint = @"http://api-m2x.att.com/v1/feeds/10c46f0efccda92bbcd17baf812a6e65/streams/location-timestamp/values";
 static NSString* m2xkey = @"fab153cc39ddd93134902a209c3e4221";
 static NSString* m2xheader = @"X-M2X-KEY";
+
+static CLLocationCoordinate2D tracks[1000];
+static int count = 0;
 
 @implementation SPM2XService
 
@@ -50,10 +54,38 @@ static NSString* m2xheader = @"X-M2X-KEY";
     [manager.requestSerializer setValue: @"application/json" forHTTPHeaderField:@"Content-Type"];
     
     [manager GET:m2xendpoint parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Response: %@", responseObject);
+        NSDictionary* response = (NSDictionary*)responseObject;
+        
+        count = 0;
+        for (NSDictionary* value in response[@"values"]) {
+            NSString* str = value[@"value"];
+            NSDictionary *deserializedData = [str objectFromJSONString];
+            
+            if (deserializedData != nil) {
+                CLLocationCoordinate2D pt = CLLocationCoordinate2DMake([deserializedData[@"lat"] floatValue], [deserializedData[@"lng"] floatValue]);
+                //[_track addObject:pt];
+                tracks[count++] = pt;
+            }
+            else {
+                NSLog(@"[warning] ignore invalid row: %@", str);
+            }
+        }
+        
+        NSLog(@"Total %d points", count);
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
+}
+
+- (int)ptCounts
+{
+    return count;
+}
+
+- (CLLocationCoordinate2D*) pttracks
+{
+    return tracks;
 }
 
 @end

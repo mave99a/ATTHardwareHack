@@ -170,7 +170,6 @@
     <resources>
         <image name="dog-activity.jpg" width="640" height="1136"/>
         <image name="dog-record.jpg" width="640" height="1136"/>
-        <image name="dog-record.jpg" width="640" height="1136"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

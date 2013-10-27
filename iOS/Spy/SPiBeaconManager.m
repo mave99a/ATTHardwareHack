@@ -8,6 +8,7 @@
 
 #import "SPiBeaconManager.h"
 #import "SPM2XService.h"
+#import "JSONKit.h"
 
 static NSString * const kUUID = @"00000000-0000-0000-0000-000000000000";
 static NSString * const kIdentifier = @"aaaIdentifier";
@@ -68,7 +69,13 @@ static CLProximity lastproximity = CLProximityUnknown;
             
             NSLog(@"[LOG] %@",row);
             
-            [[SPM2XService sharedInstance] addDataRow:row];
+            NSDictionary* location = @{
+                                       @"lat":[NSNumber numberWithFloat:_lastLocation.coordinate.latitude],
+                                       @"lng":[NSNumber numberWithFloat:_lastLocation.coordinate.longitude]
+                                       };
+            
+            NSString* loc = [location JSONString];
+            [[SPM2XService sharedInstance] addDataRow:loc];
         }
     }
 }
