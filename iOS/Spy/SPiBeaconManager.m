@@ -14,13 +14,13 @@ static NSString * const kIdentifier = @"aaaIdentifier";
 static NSString * const kCellIdentifier = @"BeaconCell";
 static CLProximity lastproximity = CLProximityUnknown;
 
-
 @interface SPiBeaconManager ()
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) CLBeaconRegion *beaconRegion;
 @property (nonatomic, strong) CBPeripheralManager *peripheralManager;
-@property (nonatomic, strong) NSArray *detectedBeacons;
+@property (nonatomic, strong) CLLocation * lastLocation;
+@property (nonatomic, strong) CLLocation * lastPubLocation;
 
 @end
 
@@ -64,7 +64,9 @@ static CLProximity lastproximity = CLProximityUnknown;
         
         if (lastproximity != beacon.proximity) {
             lastproximity = beacon.proximity;
-            NSString* row = [NSString stringWithFormat:@"I am %@ an iBeacon(%@, %@ • %@ • %f • %li)", proximityString, beacon.proximityUUID.UUIDString, beacon.major.stringValue, beacon.minor.stringValue, beacon.accuracy, (long)beacon.rssi];
+            NSString* row = [NSString stringWithFormat:@"I am %@ an iBeacon(%@, %@ • %@ • %f • %li) - location:%@", proximityString, beacon.proximityUUID.UUIDString, beacon.major.stringValue, beacon.minor.stringValue, beacon.accuracy, (long)beacon.rssi, _lastLocation];
+            
+            NSLog(@"[LOG] %@",row);
             
             [[SPM2XService sharedInstance] addDataRow:row];
         }
@@ -99,6 +101,7 @@ static CLProximity lastproximity = CLProximityUnknown;
     self.beaconRegion.notifyEntryStateOnDisplay = YES;
     [self.locationManager startRangingBeaconsInRegion:self.beaconRegion];
     [self.locationManager startMonitoringForRegion:self.beaconRegion];
+    [self.locationManager startUpdatingLocation];
     
     NSLog(@"Ranging turned on for region: %@.", self.beaconRegion);
 }
@@ -157,5 +160,10 @@ static CLProximity lastproximity = CLProximityUnknown;
     [self publishBeacon];
 }
 
+- (void)locationManager:(CLLocationManager *)manager
+    didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation {
+    _lastLocation = newLocation;
+}
 
 @end

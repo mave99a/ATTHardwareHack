@@ -12,6 +12,7 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 
 @interface SPiBeaconManager : NSObject<CLLocationManagerDelegate>
+@property (nonatomic, strong) NSArray *detectedBeacons;
 
 + (SPiBeaconManager*) sharedInstance;
 - (void)startRangingForBeacons;

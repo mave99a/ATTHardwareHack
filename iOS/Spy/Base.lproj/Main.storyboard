@@ -55,13 +55,19 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--View Controller - My dog-->
+        <!--Dog Detail View Controller - My dog-->
         <scene sceneID="Dfv-ad-qhG">
             <objects>
-                <viewController id="0c8-2U-Fxq" sceneMemberID="viewController">
+                <viewController id="0c8-2U-Fxq" customClass="SPDogDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Ht-2Q-QdH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog-record.jpg" id="Exl-l0-LL5">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="My dog" id="xbb-fk-GU0"/>
@@ -94,13 +100,26 @@
             </objects>
             <point key="canvasLocation" x="1270" y="493"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - Dogs I am sitting-->
         <scene sceneID="gCI-u3-ATp">
             <objects>
-                <viewController id="RRZ-0h-dJG" sceneMemberID="viewController">
+                <viewController title="Dogs I am sitting" id="RRZ-0h-dJG" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1IG-Dq-mrN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No dogs near you." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aJG-8f-z24">
+                                <rect key="frame" x="89" y="178" width="166" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog-record.jpg" id="OYS-kp-DGS">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="574"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="sSC-v9-au2"/>
@@ -110,6 +129,9 @@
             <point key="canvasLocation" x="694" y="-310"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dog-record.jpg" width="640" height="1136"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

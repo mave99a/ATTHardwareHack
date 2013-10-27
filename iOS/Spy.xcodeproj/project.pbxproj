@@ -21,6 +21,8 @@
 		CE9664B6181C789D0010AACE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE966495181C789D0010AACE /* UIKit.framework */; };
 		CE9664CB181CA0C60010AACE /* SPM2XService.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9664CA181CA0C60010AACE /* SPM2XService.m */; };
 		CE9664CE181CA6920010AACE /* SPiBeaconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9664CD181CA6920010AACE /* SPiBeaconManager.m */; };
+		CE9664D0181D846B0010AACE /* dog-record.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE9664CF181D846B0010AACE /* dog-record.jpg */; };
+		CE9664D3181D8ADE0010AACE /* SPDogDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9664D2181D8ADE0010AACE /* SPDogDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,9 @@
 		CE9664CA181CA0C60010AACE /* SPM2XService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPM2XService.m; sourceTree = "<group>"; };
 		CE9664CC181CA6920010AACE /* SPiBeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPiBeaconManager.h; sourceTree = "<group>"; };
 		CE9664CD181CA6920010AACE /* SPiBeaconManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPiBeaconManager.m; sourceTree = "<group>"; };
+		CE9664CF181D846B0010AACE /* dog-record.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "dog-record.jpg"; sourceTree = "<group>"; };
+		CE9664D1181D8ADE0010AACE /* SPDogDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPDogDetailViewController.h; sourceTree = "<group>"; };
+		CE9664D2181D8ADE0010AACE /* SPDogDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPDogDetailViewController.m; sourceTree = "<group>"; };
 		D3E38B47AADE422EA8FFCBCE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -124,6 +129,8 @@
 				CE9664CA181CA0C60010AACE /* SPM2XService.m */,
 				CE9664CC181CA6920010AACE /* SPiBeaconManager.h */,
 				CE9664CD181CA6920010AACE /* SPiBeaconManager.m */,
+				CE9664D1181D8ADE0010AACE /* SPDogDetailViewController.h */,
+				CE9664D2181D8ADE0010AACE /* SPDogDetailViewController.m */,
 			);
 			path = Spy;
 			sourceTree = "<group>";
@@ -131,6 +138,7 @@
 		CE966498181C789D0010AACE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CE9664CF181D846B0010AACE /* dog-record.jpg */,
 				CE966499181C789D0010AACE /* Spy-Info.plist */,
 				CE96649A181C789D0010AACE /* InfoPlist.strings */,
 				CE96649D181C789D0010AACE /* main.m */,
@@ -221,6 +229,7 @@
 				CE9664AD181C789D0010AACE /* Images.xcassets in Resources */,
 				CE9664A5181C789D0010AACE /* Main.storyboard in Resources */,
 				CE96649C181C789D0010AACE /* InfoPlist.strings in Resources */,
+				CE9664D0181D846B0010AACE /* dog-record.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +283,7 @@
 				CE9664CE181CA6920010AACE /* SPiBeaconManager.m in Sources */,
 				CE96649E181C789D0010AACE /* main.m in Sources */,
 				CE9664CB181CA0C60010AACE /* SPM2XService.m in Sources */,
+				CE9664D3181D8ADE0010AACE /* SPDogDetailViewController.m in Sources */,
 				CE9664A2181C789D0010AACE /* SPAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

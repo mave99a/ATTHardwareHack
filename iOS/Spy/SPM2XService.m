@@ -42,4 +42,18 @@ static NSString* m2xheader = @"X-M2X-KEY";
     }];
 }
 
+- (void) pullDataRows
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
+    [manager.requestSerializer setValue: m2xkey forHTTPHeaderField:m2xheader];
+    [manager.requestSerializer setValue: @"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    [manager GET:m2xendpoint parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Response: %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+}
+
 @end

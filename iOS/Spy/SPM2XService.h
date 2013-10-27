@@ -12,5 +12,6 @@
 
 + (SPM2XService*) sharedInstance;
 - (void) addDataRow:(NSString*)row;
+- (void) pullDataRows;
 
 @end
