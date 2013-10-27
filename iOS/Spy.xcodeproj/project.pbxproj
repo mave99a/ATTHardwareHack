@@ -28,6 +28,9 @@
 		CE9664DA181D97E40010AACE /* SPMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9664D9181D97E40010AACE /* SPMapViewController.m */; };
 		CE9664DD181DB8640010AACE /* detail-dog-record.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9664DB181DB8640010AACE /* detail-dog-record.png */; };
 		CE9664DE181DB8640010AACE /* header-dog-profile.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9664DC181DB8640010AACE /* header-dog-profile.png */; };
+		CE9664E0181DC0770010AACE /* dog-sitter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE9664DF181DC0770010AACE /* dog-sitter.jpg */; };
+		CE9664E2181DC29D0010AACE /* home.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE9664E1181DC29D0010AACE /* home.jpg */; };
+		CE9664E4181DCB260010AACE /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9664E3181DCB260010AACE /* CoreBluetooth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,9 @@
 		CE9664D9181D97E40010AACE /* SPMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPMapViewController.m; sourceTree = "<group>"; };
 		CE9664DB181DB8640010AACE /* detail-dog-record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "detail-dog-record.png"; sourceTree = "<group>"; };
 		CE9664DC181DB8640010AACE /* header-dog-profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header-dog-profile.png"; sourceTree = "<group>"; };
+		CE9664DF181DC0770010AACE /* dog-sitter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "dog-sitter.jpg"; sourceTree = "<group>"; };
+		CE9664E1181DC29D0010AACE /* home.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = home.jpg; sourceTree = "<group>"; };
+		CE9664E3181DCB260010AACE /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		D3E38B47AADE422EA8FFCBCE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -77,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE9664E4181DCB260010AACE /* CoreBluetooth.framework in Frameworks */,
 				CE9664D7181D8D5C0010AACE /* MapKit.framework in Frameworks */,
 				CE966494181C789D0010AACE /* CoreGraphics.framework in Frameworks */,
 				CE966496181C789D0010AACE /* UIKit.framework in Frameworks */,
@@ -120,6 +127,7 @@
 		CE966490181C789D0010AACE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE9664E3181DCB260010AACE /* CoreBluetooth.framework */,
 				CE9664D6181D8D5C0010AACE /* MapKit.framework */,
 				CE966491181C789D0010AACE /* Foundation.framework */,
 				CE966493181C789D0010AACE /* CoreGraphics.framework */,
@@ -153,6 +161,8 @@
 		CE966498181C789D0010AACE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CE9664E1181DC29D0010AACE /* home.jpg */,
+				CE9664DF181DC0770010AACE /* dog-sitter.jpg */,
 				CE9664DB181DB8640010AACE /* detail-dog-record.png */,
 				CE9664DC181DB8640010AACE /* header-dog-profile.png */,
 				CE9664D4181D8CAE0010AACE /* dog-activity.jpg */,
@@ -251,9 +261,11 @@
 				CE9664A5181C789D0010AACE /* Main.storyboard in Resources */,
 				CE9664D5181D8CAE0010AACE /* dog-activity.jpg in Resources */,
 				CE96649C181C789D0010AACE /* InfoPlist.strings in Resources */,
+				CE9664E2181DC29D0010AACE /* home.jpg in Resources */,
 				CE9664DE181DB8640010AACE /* header-dog-profile.png in Resources */,
 				CE9664DD181DB8640010AACE /* detail-dog-record.png in Resources */,
 				CE9664D0181D846B0010AACE /* dog-record.jpg in Resources */,
+				CE9664E0181DC0770010AACE /* dog-sitter.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

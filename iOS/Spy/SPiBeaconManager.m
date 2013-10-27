@@ -9,6 +9,7 @@
 #import "SPiBeaconManager.h"
 #import "SPM2XService.h"
 #import "JSONKit.h"
+#import <CoreBluetooth/CoreBluetooth.h>
 
 static NSString * const kUUID = @"00000000-0000-0000-0000-000000000000";
 static NSString * const kIdentifier = @"aaaIdentifier";
@@ -124,6 +125,10 @@ static CLProximity lastproximity = CLProximityUnknown;
     [self.locationManager startUpdatingLocation];
     
     NSLog(@"Ranging turned on for region: %@.", self.beaconRegion);
+    
+    self.m = [[CBCentralManager alloc]initWithDelegate:self queue:nil];
+    self.nDevices = [[NSMutableArray alloc]init];
+    self.sensorTags = [[NSMutableArray alloc]init];
 }
 
 
@@ -184,6 +189,80 @@ static CLProximity lastproximity = CLProximityUnknown;
     didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation {
     _lastLocation = newLocation;
+}
+
+#pragma mark - CBCentralManager delegate
+
+-(void)centralManagerDidUpdateState:(CBCentralManager *)central {
+    if (central.state != CBCentralManagerStatePoweredOn) {
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"BLE not supported !" message:[NSString stringWithFormat:@"CoreBluetooth return state: %d",central.state] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+    }
+    else {
+        [central scanForPeripheralsWithServices:nil options:nil];
+    }
+}
+
+
+
+
+-(void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI {
+    
+    NSLog(@"Found a BLE Device : %@",peripheral);
+    
+    /* iOS 6.0 bug workaround : connect to device before displaying UUID !
+     The reason for this is that the CFUUID .UUID property of CBPeripheral
+     here is null the first time an unkown (never connected before in any app)
+     peripheral is connected. So therefore we connect to all peripherals we find.
+     */
+    
+    peripheral.delegate = self;
+    [central connectPeripheral:peripheral options:nil];
+    
+    [self.nDevices addObject:peripheral];
+    
+}
+
+-(void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral {
+    [peripheral discoverServices:nil];
+}
+
+#pragma  mark - CBPeripheral delegate
+
+-(void) peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error {
+    BOOL replace = NO;
+    BOOL found = NO;
+    NSLog(@"Services scanned !");
+    [self.m cancelPeripheralConnection:peripheral];
+    for (CBService *s in peripheral.services) {
+        NSLog(@"Service found : %@",s.UUID);
+        if ([s.UUID isEqual:[CBUUID UUIDWithString:@"F000AA00-0451-4000-B000-000000000000"]])  {
+            NSLog(@"This is a SensorTag !");
+            found = YES;
+        }
+    }
+    if (found) {
+        // Match if we have this device from before
+        for (int ii=0; ii < self.sensorTags.count; ii++) {
+            CBPeripheral *p = [self.sensorTags objectAtIndex:ii];
+            if ([p isEqual:peripheral]) {
+                [self.sensorTags replaceObjectAtIndex:ii withObject:peripheral];
+                replace = YES;
+            }
+        }
+        if (!replace) {
+            [self.sensorTags addObject:peripheral];
+           // [self.tableView reloadData];
+        }
+    }
+}
+
+-(void) peripheral:(CBPeripheral *)peripheral didUpdateNotificationStateForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
+    NSLog(@"didUpdateNotificationStateForCharacteristic %@ error = %@",characteristic,error);
+}
+
+-(void) peripheral:(CBPeripheral *)peripheral didWriteValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
+    NSLog(@"didWriteValueForCharacteristic %@ error = %@",characteristic,error);
 }
 
 @end

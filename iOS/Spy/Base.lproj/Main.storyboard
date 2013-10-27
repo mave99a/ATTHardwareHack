@@ -44,7 +44,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="0c8-2U-Fxq" kind="push" id="a1V-M9-D1F"/>
+                                    <segue destination="oU0-7s-nLt" kind="push" id="eEe-Yb-d5V"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -84,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dtm-EC-nfJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="694" y="498"/>
+            <point key="canvasLocation" x="674" y="606"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Gxo-xw-Qqq">
@@ -115,7 +115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gUI-VY-Vjv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1138" y="579"/>
+            <point key="canvasLocation" x="1118" y="683"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="uyN-E2-dFL">
@@ -126,13 +126,27 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="yJ5-sq-TFE">
-                                <rect key="frame" x="0.0" y="178" width="320" height="450"/>
+                                <rect key="frame" x="0.0" y="178" width="320" height="337"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header-dog-profile.png" id="XDh-xa-oaz">
                                 <rect key="frame" x="0.0" y="61" width="320" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detail-dog-record.png" id="lq8-cV-Bc7">
+                                <rect key="frame" x="0.0" y="459" width="320" height="109"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Zz9-bk-zfj">
+                                <rect key="frame" x="20" y="523" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="RRZ-0h-dJG" kind="push" id="aIt-ah-lSR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -160,10 +174,20 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog-record.jpg" id="OYS-kp-DGS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog-sitter.jpg" id="OYS-kp-DGS">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="574"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sNH-DD-wCd">
+                                <rect key="frame" x="14" y="265" width="293" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="0c8-2U-Fxq" kind="push" id="Vk4-3v-Oaf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -173,15 +197,60 @@
             </objects>
             <point key="canvasLocation" x="694" y="-310"/>
         </scene>
+        <!--View Controller - Dogs I am sitting-->
+        <scene sceneID="dIi-EI-z2l">
+            <objects>
+                <viewController title="Dogs I am sitting" id="oU0-7s-nLt" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Loy-mC-bij">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No dogs near you." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Up2-HL-B9v">
+                                <rect key="frame" x="89" y="178" width="166" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home.jpg" id="9ku-f0-yFC">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="574"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FFT-9A-B46">
+                                <rect key="frame" x="14" y="265" width="293" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="0c8-2U-Fxq" kind="push" id="BuJ-KC-ky2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ph5-1v-FKx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ny-cm-LKD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="230" y="638"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="detail-dog-record.png" width="641" height="240"/>
         <image name="dog-activity.jpg" width="640" height="1136"/>
         <image name="dog-record.jpg" width="640" height="1136"/>
+        <image name="dog-sitter.jpg" width="640" height="1136"/>
         <image name="header-dog-profile.png" width="641" height="284"/>
+        <image name="home.jpg" width="640" height="1136"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="Vk4-3v-Oaf"/>
+        <segue reference="aIt-ah-lSR"/>
+    </inferredMetricsTieBreakers>
 </document>
