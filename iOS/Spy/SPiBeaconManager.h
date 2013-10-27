@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SPiBeaconManager : NSObject
+#import <CoreLocation/CoreLocation.h>
+#import <CoreBluetooth/CoreBluetooth.h>
+
+@interface SPiBeaconManager : NSObject<CLLocationManagerDelegate>
+
++ (SPiBeaconManager*) sharedInstance;
+- (void)startRangingForBeacons;
+- (void)stopRangingForBeacons;
 
 @end

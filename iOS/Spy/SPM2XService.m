@@ -26,14 +26,14 @@ static NSString* m2xheader = @"X-M2X-KEY";
     return _sharedInstance;
 }
 
-- (void) addDataRow
+- (void) addDataRow:(NSString*)row
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
     [manager.requestSerializer setValue: m2xkey forHTTPHeaderField:m2xheader];
     [manager.requestSerializer setValue: @"application/json" forHTTPHeaderField:@"Content-Type"];
     
-    NSDictionary *params = @{@"values":@[@{@"value":@"lalala test data from iOS"}]};
+    NSDictionary *params = @{@"values":@[@{@"value":row}]};
     
     [manager POST:m2xendpoint parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Response: %@", responseObject);

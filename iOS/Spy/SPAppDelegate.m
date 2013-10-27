@@ -7,15 +7,14 @@
 //
 
 #import "SPAppDelegate.h"
-#import "SPM2XService.h"
+#import "SPiBeaconManager.h"
 
 @implementation SPAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    
-    [[SPM2XService sharedInstance] addDataRow];
+    [[SPiBeaconManager sharedInstance] startRangingForBeacons];
     return YES;
 }
 							

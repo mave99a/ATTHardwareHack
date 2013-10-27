@@ -11,6 +11,6 @@
 @interface SPM2XService : NSObject
 
 + (SPM2XService*) sharedInstance;
-- (void) addDataRow;
+- (void) addDataRow:(NSString*)row;
 
 @end
